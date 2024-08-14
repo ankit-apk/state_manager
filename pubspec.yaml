@@ -1,7 +1,7 @@
 name: state_manager
-description: "A new Flutter package project."
+description: "State Manager is a flexible and efficient state management solution for Flutter applications. It provides various types of state containers to handle different scenarios, from simple state management to asynchronous operations and persistent storage."
 version: 0.0.1
-homepage:
+homepage: https://github.com/ankit-apk/state_manager
 
 environment:
   sdk: ^3.5.0
