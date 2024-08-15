@@ -9,12 +9,14 @@ class EmployeeStateManager extends AsyncStateContainer<EmployeeModel> {
   EmployeeStateManager() : super();
 
   Future<void> fetchEmployees() async {
-    setState(Future(() async {
-      try {
-        return await _employeeUsecase.getEmployees();
-      } catch (e) {
-        throw Exception("Failed to fetch employees: $e");
-      }
-    }));
+    setState(_fetchEmployeesLogic());
+  }
+
+  Future<EmployeeModel> _fetchEmployeesLogic() async {
+    try {
+      return await _employeeUsecase.getEmployees();
+    } catch (e) {
+      throw Exception("Failed to fetch employees: $e");
+    }
   }
 }
