@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:state_manager/state_manager.dart';
+import 'package:state_manager_example/features/people/data/model/employee_model.dart';
 
 import '../widgets/app_drawer.dart';
 
@@ -15,7 +16,7 @@ class AsyncDataScreen extends StatefulWidget {
 class _AsyncDataScreenState extends State<AsyncDataScreen> {
   @override
   Widget build(BuildContext context) {
-    final asyncState = watchState(asyncContainer);
+    final asyncState = watchState<EmployeeModel>(asyncContainer);
 
     return Scaffold(
       appBar: AppBar(title: const Text('Async Data Screen')),
@@ -26,10 +27,10 @@ class _AsyncDataScreenState extends State<AsyncDataScreen> {
             : asyncState.container.error != null
                 ? Text('Error: ${asyncState.container.error}')
                 : ListView.builder(
-                    itemCount: asyncState.value?.length ?? 0,
+                    itemCount: asyncState.value.data.length,
                     itemBuilder: (context, index) {
                       return ListTile(
-                        title: Text(asyncState.value![index]),
+                        title: Text(asyncState.value.data[index].employeeName),
                       );
                     },
                   ),

@@ -30,6 +30,10 @@ class AppDrawer extends StatelessWidget {
             title: const Text('Persistent Counter Screen'),
             onTap: () => Navigator.pushNamed(context, '/persistent'),
           ),
+          ListTile(
+            title: const Text('Employee List Screen'),
+            onTap: () => Navigator.pushNamed(context, '/employee'),
+          ),
         ],
       ),
     );

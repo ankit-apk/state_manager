@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'features/people/presentation/screen/employee_list.dart';
 import 'screens/async_data_screen.dart';
 import 'screens/counter_screen.dart';
 import 'screens/persistent_counter_screen.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         '/async': (_) => const AsyncDataScreen(),
         '/scoped': (_) => const ScopedStateScreen(),
         '/persistent': (_) => const PersistentCounterScreen(),
+        '/employee': (_) => EmployeeListScreen(),
       },
     );
   }
